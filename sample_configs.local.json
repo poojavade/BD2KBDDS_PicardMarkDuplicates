@@ -1,0 +1,12 @@
+{
+  "bam_input": {
+        "class": "File",
+        "format": "http://edamontology.org/format_2572",
+        "path": "/tmp/mapped_reads.bam"
+    },
+    "picard_marked_duplicates_output": {
+        "class": "File",
+        "format": "http://edamontology.org/format_2572",
+        "path": "/tmp/Dupes_Marked.bam"
+    },
+}
