@@ -5,16 +5,15 @@ id: BD2KBDDS_Picard
 label: BD2KBDDS_Picard tool
 cwlVersion: latest
 
-doc: |
-  This is a BD2k-BDDS Picard container. Please have a look on https://broadinstitute.github.io/picard/ for more information.
+description: "This is a BD2k-BDDS Picard container. Please have a look on https://broadinstitute.github.io/picard/ for more information."
 
 dct:creator:
   foaf:name: Pooja Vade
-  foaf:mbox: mailto:pooja043@uw.edu
+  foaf:mbox: "mailto:pooja043@uw.edu"
 
 requirements:
 - class: DockerRequirement
-  dockerPull: quay.io/pooja043/picard_mark_duplicates:latest
+  dockerPull: "quay.io/poojavade/bd2kbdds_picard:latest"
 
 inputs:
   id: "#bam_input"
