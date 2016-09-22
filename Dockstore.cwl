@@ -5,29 +5,35 @@ id: BD2KBDDS_Picard
 label: BD2KBDDS_Picard tool
 cwlVersion: latest
 
-description: "This is a BD2k-BDDS Picard container. Please have a look on https://broadinstitute.github.io/picard/ for more information."
-
 dct:creator:
   foaf:name: Pooja Vade
-  foaf:mbox: "mailto:pooja043@uw.edu"
+  foaf:mbox: pooja043@uw.edu
 
 requirements:
 - class: DockerRequirement
-  dockerPull: "quay.io/poojavade/bd2kbdds_picard:latest"
+  dockerPull: quay.io/poojavade/bd2kbdds_picard:latest
+  
+hints:
+- class: ResourceRequirement
+  coresMin: 1
+  ramMin: 4092
+  outdirMin: 512000
+  description: the process requires at least 4G of RAM
 
 inputs:
-  id: "#bam_input"
+  bam_input
     type: File
-    description: "The BAM file used as input, it must be sorted."
     format: "http://edamontology.org/format_2572"
     inputBinding:
       position: 1
+    doc: The BAM file used as input, it must be sorted.
 
 outputs:
-  - id: "#picardMarkDuplicates_report"
+  picardMarkDuplicates_report
     type: File
-    format: "http://edamontology.org/format_2572"
+    format: http://edamontology.org/format_2572
     outputBinding:
-      glob: Dupes_Marked.bam
-    description: "A bam file with duplicates marked."
-
+      glob: Dupes_Marked
+    doc: A bam file with duplicates marked
+    
+baseCommand: [bash, java]
