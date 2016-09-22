@@ -31,5 +31,3 @@ outputs:
       glob: Dupes_Marked.bam
     description: "A bam file with duplicates marked."
 
-baseCommand: [bash, java -jar $PICARD -h] 
-
